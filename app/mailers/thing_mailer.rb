@@ -1,5 +1,5 @@
 class ThingMailer < ActionMailer::Base
-  default :from => "adoptahydrant@cityofboston.gov"
+  default :from => "adoptgr@adoptgr.herokuapp.com"
 
   def reminder(thing)
     @thing = thing

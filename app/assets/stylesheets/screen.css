@@ -5,11 +5,13 @@ html {
 body {
   height: 100%;
   margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 h1, h2 {
   text-align: center;
   margin: 20px 0 10px;
+  font-size: 32px;
 }
 
 h2 {
@@ -115,6 +117,10 @@ a.btn {
   padding: 17px 20px 10px;
 }
 
+.sidebar h1 img {
+  padding-bottom: 0.5em;
+}
+
 .sidebar p#tagline {
   color: #ffffff;
   background-color: #c43c35;
@@ -138,6 +144,10 @@ a.btn {
   height: 100px;
 }
 
+.sidebar #logos img {
+  max-width: 100%;
+}
+
 .sidebar #logos #col1 {
   float: left;
   margin-left: 20px;
@@ -153,18 +163,6 @@ a.btn {
   float: left;
   margin-left: 10px;
   width: 100px;
-}
-
-.sidebar #mayor {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 8px;
-  padding: 0;
-  margin: -5px 0 0 0;
-}
-
-.sidebar #mayor a, .sidebar #mayor a:active, .sidebar #mayor a:hover, .sidebar #mayor a:visited {
-  color: #000;
-  text-decoration: none;
 }
 
 .sidebar #feedback {

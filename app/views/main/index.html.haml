@@ -20,10 +20,6 @@
         #col2
           %a{:href => "http://www.friendlycode.org/"}
             = image_tag "logos/friendly.jpeg", :alt => t("sponsors.built"), :title => t("sponsors.built")
-      #feedback
-        %p
-          %a{:href => URI.escape("mailto:#{t("defaults.email_address")}?subject=#{t("titles.main", :thing => t("defaults.thing").titleize)} - #{t("links.feedback").titleize}")}
-            = t("links.feedback")
     .table-cell.map-container
       #map
         &nbsp;

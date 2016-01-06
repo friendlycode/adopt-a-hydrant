@@ -23,6 +23,7 @@ end
 group :assets do
   gem 'sass-rails', '>= 4.0.3'
   gem 'uglifier'
+  gem 'sprockets-rails', '2.3.3'
 end
 
 group :development do

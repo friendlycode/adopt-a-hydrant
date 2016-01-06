@@ -7,17 +7,17 @@ class InfoWindowControllerTest < ActionController::TestCase
     @user = users(:erik)
   end
 
-  test 'should thank the user if the user the hydrant is adopted by the user' do
+  test 'should thank the user if the hydrant is adopted by the user' do
     sign_in @user
     @thing.user_id = @user.id
     @thing.save!
-    get :index, :thing_id => @thing.id
+    get :index, thing_id: @thing.id
     assert_not_nil assigns :thing
     assert_response :success
     assert_template 'users/thank_you'
     assert_select 'h2', 'Thank you for adopting this hydrant!'
     assert_select 'form#abandon_form' do
-      assert_select '[action=?]', "/things"
+      assert_select '[action=?]', '/things'
       assert_select '[method=?]', 'post'
     end
     assert_select 'input[name="_method"]' do
@@ -33,7 +33,7 @@ class InfoWindowControllerTest < ActionController::TestCase
   test 'should show the profile if the hydrant is adopted' do
     @thing.user_id = @user.id
     @thing.save!
-    get :index, :thing_id => @thing.id
+    get :index, thing_id: @thing.id
     assert_not_nil assigns :thing
     assert_response :success
     assert_template 'users/profile'
@@ -42,13 +42,13 @@ class InfoWindowControllerTest < ActionController::TestCase
 
   test 'should show adoption form if hydrant is not adopted' do
     sign_in @user
-    get :index, :thing_id => @thing.id
+    get :index, thing_id: @thing.id
     assert_not_nil assigns :thing
     assert_response :success
     assert_template :adopt
     assert_select 'h2', 'Adopt this Hydrant'
     assert_select 'form#adoption_form' do
-      assert_select '[action=?]', "/things"
+      assert_select '[action=?]', '/things'
       assert_select '[method=?]', 'post'
     end
     assert_select 'input[name="_method"]' do
@@ -62,7 +62,7 @@ class InfoWindowControllerTest < ActionController::TestCase
   end
 
   test 'should show sign-in form if signed out' do
-    get :index, :thing_id => @thing.id
+    get :index, thing_id: @thing.id
     assert_not_nil assigns :thing
     assert_response :success
     assert_template 'users/sign_in'

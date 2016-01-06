@@ -1,8 +1,8 @@
 # Adopt-a-Hydrant
 
-[![Build Status](https://secure.travis-ci.org/codeforamerica/adopt-a-hydrant.png?branch=master)][travis]
-[![Dependency Status](https://gemnasium.com/codeforamerica/adopt-a-hydrant.png?travis)][gemnasium]
-[![Coverage Status](https://coveralls.io/repos/codeforamerica/adopt-a-hydrant/badge.png?branch=master)][coveralls]
+[![Build Status](http://img.shields.io/travis/codeforamerica/adopt-a-hydrant.svg)][travis]
+[![Dependency Status](http://img.shields.io/gemnasium/codeforamerica/adopt-a-hydrant.svg)][gemnasium]
+[![Coverage Status](http://img.shields.io/coveralls/codeforamerica/adopt-a-hydrant.svg)][coveralls]
 
 [travis]: http://travis-ci.org/codeforamerica/adopt-a-hydrant
 [gemnasium]: https://gemnasium.com/codeforamerica/adopt-a-hydrant
@@ -66,7 +66,19 @@ A successful deployment to Heroku requires a few setup steps:
 
     `heroku run bundle exec rake db:seed`
 
-6. Keep in mind that the Heroku free Postgres plan only allows up to 10,000 rows, so if your city has more than 10,000 fire hydrants (or other thing to be adopted), you will need to upgrade to the $9/month plan.
+Keep in mind that the Heroku free Postgres plan only allows up to 10,000 rows,
+so if your city has more than 10,000 fire hydrants (or other thing to be
+adopted), you will need to upgrade to the $9/month plan.
+
+### Google Analytics
+If you have a Google Analytics account you want to use to track visits to your
+deployment of this app, just set your ID and your domain name as environment
+variables:
+
+    heroku config:set GOOGLE_ANALYTICS_ID=your_id
+    heroku config:set GOOGLE_ANALYTICS_DOMAIN=your_domain_name
+
+An example ID is `UA-12345678-9`, and an example domain is `adoptahydrant.org`.
 
 ## Contributing
 In the spirit of [free software][free-sw], **everyone** is encouraged to help
@@ -120,7 +132,7 @@ Ideally, a bug report should include a pull request with failing specs.
 [pr]: http://help.github.com/send-pull-requests/
 
 ## Supported Ruby Version
-This library aims to support and is [tested against][travis] Ruby version 2.1.0.
+This library aims to support and is [tested against][travis] Ruby version 2.1.2.
 
 If something doesn't work on this version, it should be considered a bug.
 

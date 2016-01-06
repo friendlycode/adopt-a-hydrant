@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.1.0'
+ruby '2.3.0'
 
-gem 'rails', '~> 4.0.3'
+gem 'rails', '~> 4.2.5'
 
 gem 'arel'
 gem 'devise'
@@ -21,21 +21,23 @@ platforms :ruby_18 do
 end
 
 group :assets do
-  gem 'sass-rails'
+  gem 'sass-rails', '>= 4.0.3'
   gem 'uglifier'
 end
 
-group :development, :test do
-  gem 'pry'
+group :development do
+  gem 'spring'
 end
 
 group :production do
   gem 'puma'
+  gem 'skylight'
 end
 
 group :test do
-  gem 'coveralls', :require => false
-  gem 'simplecov', :require => false
+  gem 'coveralls', require: false
+  gem 'rubocop'
+  gem 'simplecov', require: false
   gem 'sqlite3'
   gem 'webmock'
 end

@@ -7,6 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore bundle
+/vendor/bundle
+
 # Ignore SimpleCov directory.
 /coverage
 
@@ -15,5 +18,6 @@
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/log/*.log
+/log/*
+!/log/.keep
 /tmp

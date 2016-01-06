@@ -3,7 +3,7 @@ require 'test_helper'
 class SessionsControllerTest < ActionController::TestCase
   include Devise::TestHelpers
   setup do
-    request.env["devise.mapping"] = Devise.mappings[:user]
+    request.env['devise.mapping'] = Devise.mappings[:user]
     @user = users(:erik)
   end
 
@@ -19,19 +19,19 @@ class SessionsControllerTest < ActionController::TestCase
   end
 
   test 'should authenticate user if password is correct' do
-    post :create, :user => {:email => @user.email, :password => 'correct'}, :format => :json
+    post :create, user: {email: @user.email, password: 'correct'}, format: :json
     assert_response :success
   end
 
   test 'should return error if password is incorrect' do
-    post :create, :user => {:email => @user.email, :password => 'incorrect'}, :format => :json
+    post :create, user: {email: @user.email, password: 'incorrect'}, format: :json
     assert_response 401
   end
 
   test 'should empty session on sign out' do
     sign_in @user
-    get :destroy, :format => :json
-    assert_equal {}, session
+    get :destroy, format: :json
+    assert session.empty?
     assert_response :success
   end
 end
